@@ -5,6 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+//import model
+use App\Models\characters;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,5 +21,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $this->call([
+            CharactersSeeder::class
+        ]);
+
+        characters::factory(18)->create();
     }
 }
